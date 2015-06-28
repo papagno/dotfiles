@@ -14,5 +14,9 @@ fi
 
 # Install homebrew packages
 brew install grc coreutils spark
+brew install brew-cask python 
+brew install vim --override-system-vim
+brew install tmux
+brew install reattach-to-user-namespace
 
 exit 0

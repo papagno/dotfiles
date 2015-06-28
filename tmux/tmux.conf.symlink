@@ -1,0 +1,11 @@
+# Use zsh as shell
+set-option -g default-shell /bin/zsh
+
+# Colors
+set -g default-terminal "screen-256color"
+
+# Use the mouse
+setw -g mode-mouse on
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-select-window on
