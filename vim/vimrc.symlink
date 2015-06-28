@@ -1,4 +1,62 @@
-syntax on
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" Sets how many lines of history vim has to remember
+set history=1000
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Required for airline
+set laststatus=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle. Required!
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins on github
+Plugin 'bling/vim-airline'
+Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable syntax highlighting
+syntax on
+filetype off
+filetype on
+
+colorscheme solarized
+set background=dark
+
+augroup vimrc
+  autocmd!
+  autocmd GuiEnter * set guifont=Monaco:h16 guioptions-=T columns=120 lines=70 number
+augroup END
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Fix gutter for vim-gitgutter
+highlight clear SignColumn

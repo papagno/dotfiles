@@ -1,6 +1,47 @@
 # Default shell
 set-option -g default-shell /bin/zsh
+
+# Make copy/paste work.
 set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# OS X copying
+bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
+
+# Crtl-b sucks, use Crtl-a as leader
+unbind C-b
+set -g prefix C-a
+
+# Send prefix through to applications by pressing prefix twice:
+bind C-a send-prefix
+
+# Set delay to make tmux more responsive (ie, for vim)
+set -sg escape-time 0
+
+# Window numbering starts at 1:
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Make it easier to reload config with PREFIX r:
+bind r source-file ~/.tmux.conf \; display "Reloaded config!"
+
+# Set vertical split:
+bind | split-window -h
+
+# Set horizontal split:
+bind - split-window -v
+
+# Move between panes with vim movement keys:
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Resizing panes:
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
 
 # Colors
 set -g default-terminal "screen-256color"
