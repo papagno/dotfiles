@@ -19,4 +19,7 @@ brew install vim --override-system-vim
 brew install tmux
 brew install reattach-to-user-namespace
 
+# Set zsh as login shell
+chsh -s $(which zsh)
+
 exit 0
