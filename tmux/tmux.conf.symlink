@@ -1,5 +1,5 @@
 # Default shell
-set-option -g default-shell /bin/zsh
+set-option -g default-shell "/bin/zsh"
 
 # Colors
 set -g default-terminal "screen-256color"
