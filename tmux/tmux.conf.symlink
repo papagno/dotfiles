@@ -1,5 +1,6 @@
 # Default shell
-set-option -g default-shell "/bin/zsh"
+set-option -g default-shell /bin/zsh
+set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Colors
 set -g default-terminal "screen-256color"
@@ -11,4 +12,4 @@ set -g mouse-resize-pane on
 set -g mouse-select-window on
 
 # Powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
+#source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
