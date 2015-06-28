@@ -1,4 +1,4 @@
-# Use zsh as shell
+# Default shell
 set-option -g default-shell /bin/zsh
 
 # Colors
@@ -9,3 +9,6 @@ setw -g mode-mouse on
 set -g mouse-select-pane on
 set -g mouse-resize-pane on
 set -g mouse-select-window on
+
+# Powerline
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
