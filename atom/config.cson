@@ -1,0 +1,16 @@
+"*":
+  "exception-reporting":
+    userId: "497e141f-338a-e6d5-7bb3-586b6202c12f"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-light-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    fontFamily: "Menlo"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "ember-cli-helper": {}
