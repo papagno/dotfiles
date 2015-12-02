@@ -2,6 +2,8 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible
+
 " Sets how many lines of history vim has to remember
 set history=1000
 
@@ -12,29 +14,54 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Required for airline
+" Always show the statusline
 set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+filetype off                  " required
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle manage Vundle. Required!
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-" Plugins on github
-Plugin 'bling/vim-airline'
+" Tools
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+
+" Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'joshdick/onedark.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" Airline
+let g:airline_theme=hybrid
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -46,7 +73,7 @@ filetype off
 filetype on
 set number
 
-colorscheme solarized
+colorscheme onedark
 set background=dark
 
 augroup vimrc
