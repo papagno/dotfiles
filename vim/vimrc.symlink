@@ -20,6 +20,9 @@ set laststatus=2
 " Remove NERDTree scrollbar
 set guioptions-=L
 
+" Automatically cd to the directory of the editing file
+set autochdir
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,8 +41,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 
 " Color schemes
@@ -47,6 +48,14 @@ Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'joshdick/onedark.vim'
+
+" Try and decide
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +77,12 @@ filetype plugin indent on    " required
 " Airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts=1
+
+" CtrlP ignore
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|target\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
