@@ -17,9 +17,14 @@ set autoread
 " Always show the statusline
 set laststatus=2
 
+" Remove NERDTree scrollbar
+set guioptions-=L
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Before plugin install clone into bundles this repo:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 filetype off                  " required
 
@@ -61,7 +66,8 @@ filetype plugin indent on    " required
 "let g:syntastic_check_on_wq = 0
 
 " Airline
-let g:airline_theme=hybrid
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -73,12 +79,13 @@ filetype off
 filetype on
 set number
 
-colorscheme onedark
+"colorscheme onedark
+colorscheme gruvbox
 set background=dark
 
 augroup vimrc
   autocmd!
-  autocmd GuiEnter * set guifont=Monaco:h16 guioptions-=T columns=120 lines=70 number
+  autocmd GuiEnter * set guifont=Menlo\ for\ Powerline:h12 guioptions-=T columns=160 lines=70 number
 augroup END
 
 " Set utf8 as standard encoding and en_US as the standard language
